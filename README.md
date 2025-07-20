@@ -36,3 +36,33 @@ This is a **reusable recurring date picker** built using **Next.js**, **Tailwind
 
 ---
 
+## 🚀 Installation & Run Instructions
+
+### 📦 1. Clone the Repository
+
+```bash
+git clone https://github.com/vidyaMadugula/Recurring_Date_Picker.git
+cd recurring-date-picker
+
+📦 2. Install Dependencies
+npm install
+
+🧪 3. Start Development Server
+npm run dev
+```
+
+---
+
+### 🌐 Running in Cloud IDEs (StackBlitz / Gitpod / CodeSandbox)
+
+When using a cloud-based IDE:
+
+✅ **Select port `3000`** for preview.
+
+> ⚠️ Do **not** select port `2222` — it's for internal VM access and will show a 502 Bad Gateway error.
+
+If you encounter **502 Bad Gateway** or blank screens:
+- Make sure `npm run dev` is running
+- Wait for the server to fully start
+- Refresh the browser preview
+- Restart the dev server if the IDE is running low on memory
