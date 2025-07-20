@@ -1,7 +1,8 @@
-// MonthlyPatternPicker.js
+
+
+// src/components/MonthlyPatternPicker.js
 import React from 'react';
 import { useRecurrenceStore } from '../../store/recurrenceStore';
-
 
 const MonthlyPatternPicker = () => {
   const {
@@ -12,38 +13,38 @@ const MonthlyPatternPicker = () => {
   } = useRecurrenceStore();
 
   return (
-    <div className="mt-4 p-2 border rounded-lg">
-      <div className="font-medium">Monthly Options:</div>
-      {/* Option 1: specific day of month */}
-      <label className="flex items-center mt-2">
+    <div className="p-4 bg-gray-50 rounded-lg space-y-3">
+      <div className="font-medium text-gray-800">Monthly Options:</div>
+
+      <label className="flex items-center space-x-2">
         <input
           type="radio" name="monthlyOpt" value="date"
           checked={monthlyOption === 'date'}
           onChange={() => setMonthlyOption('date')}
-          className="mr-2"
+          className="accent-blue-500"
         />
-        Day 
+        <span>Day</span>
         <input
           type="number" min="1" max="31"
           value={monthDay}
           onChange={e => setMonthDay(parseInt(e.target.value) || 1)}
-          className="ml-1 w-16 p-1 border rounded"
+          className="w-16 p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        of the month
+        <span>of the month</span>
       </label>
-      {/* Option 2: ordinal weekday */}
-      <label className="flex items-center mt-2">
+
+      <label className="flex items-center space-x-2">
         <input
           type="radio" name="monthlyOpt" value="weekday"
           checked={monthlyOption === 'weekday'}
           onChange={() => setMonthlyOption('weekday')}
-          className="mr-2"
+          className="accent-blue-500"
         />
-        The
+        <span>The</span>
         <select
           value={monthWeekIndex}
           onChange={e => setMonthWeekIndex(parseInt(e.target.value))}
-          className="mx-1 p-1 border rounded"
+          className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {[1,2,3,4,5].map(n => (
             <option key={n} value={n}>{n}{n===1?'st':n===2?'nd':n===3?'rd':'th'}</option>
@@ -52,13 +53,13 @@ const MonthlyPatternPicker = () => {
         <select
           value={monthWeekday}
           onChange={e => setMonthWeekday(parseInt(e.target.value))}
-          className="mx-1 p-1 border rounded"
+          className="p-1 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].map((wd, i) => (
             <option key={i} value={i}>{wd}</option>
           ))}
         </select>
-        of the month
+        <span>of the month</span>
       </label>
     </div>
   );
